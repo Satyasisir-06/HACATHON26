@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="Inter-College Hackathon 2026 at Chaitanya Engineering College - Where Magic Meets Innovation. Join the wizarding world's premier technology competition.">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>⚡ Hackwarts Hackathon 2026 | Chaitanya Engineering College ⚡</title>
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="magical-text">⚡ HACKWARTS HACKATHON 2026 ⚡</span>
+            </h1>
+            <p class="hero-tagline">Inter-College Hackathon | Chaitanya Engineering College</p>
+            <p class="hero-description">
+                Join the wizarding world's premier technology competition. Choose your house, build revolutionary
+                projects, and compete for magical prizes.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary magical-ripple" onclick="scrollToSection('register')">
+                    Enroll Now
+                </button>
+                <button class="btn btn-secondary magical-ripple" onclick="scrollToSection('houses')">
+                    Explore Houses
+                </button>
+            </div>
+        </div>
+        <div class="hero-particles" id="particles"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">The Quest Awaits</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🏰</div>
+                    <h3>House-Based Competition</h3>
+                    <p>Join one of five legendary houses, each specializing in unique domains of innovation.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">⚗️</div>
+                    <h3>All Skill Levels Welcome</h3>
+                    <p>From beginner to advanced, choose projects that match your magical abilities.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">✨</div>
+                    <h3>Open Innovation Track</h3>
+                    <p>Think beyond boundaries. Create your own groundbreaking project in Merlinthor house.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Magical Features Cards Section -->
+    <section id="features" class="cards-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">The Dark Cards</h2>
+            <p class="section-subtitle">Small glimpses into our magical world</p>
+
+            <div class="cards-grid">
+                <div class="magic-card">
+                    <div class="card-icon">🏆</div>
+                    <h3 class="card-title">Epic Competitions</h3>
+                    <p class="card-description">Compete in house-based challenges across multiple domains. Only the
+                        strongest teams will claim victory.</p>
+                </div>
+
+                <div class="magic-card">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">24-Hour Coding</h3>
+                    <p class="card-description">Push your limits in an intense 24-hour magical coding marathon.
+                        Innovation never sleeps.</p>
+                </div>
+
+                <div class="magic-card">
+                    <div class="card-icon">🧙</div>
+                    <h3 class="card-title">Expert Mentorship</h3>
+                    <p class="card-description">Learn from the greatest wizards in tech. Get guidance from industry
+                        masters throughout your journey.</p>
+                </div>
+
+                <div class="magic-card">
+                    <div class="card-icon">💎</div>
+                    <h3 class="card-title">Enchanted Prizes</h3>
+                    <p class="card-description">Win magical rewards worth over ₹1 Lakh. Your innovation deserves
+                        recognition.</p>
+                </div>
+
+                <div class="magic-card">
+                    <div class="card-icon">🔮</div>
+                    <h3 class="card-title">Innovation Freedom</h3>
+                    <p class="card-description">Choose from curated challenges or forge your own path in the Open
+                        Innovation track.</p>
+                </div>
+
+                <div class="magic-card">
+                    <div class="card-icon">🌟</div>
+                    <h3 class="card-title">All Skill Levels</h3>
+                    <p class="card-description">From apprentice to master wizard, everyone has a place in our magical
+                        realm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Houses & Projects Section -->
+    <section id="houses" class="houses-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Choose Your House</h2>
+            <p class="section-subtitle">Click a house to explore its magical projects and challenges</p>
+
+            <div class="house-card-grid">
+                <!-- Gryffindor -->
+                <a href="houses/gryffindor.html" class="house-card-modern" data-house="gryffindor">
+                    <div class="house-card-glow"></div>
+                    <img src="assets/images/gryffindor.png" alt="Gryffindor Crest" class="house-crest">
+                    <h3 class="house-card-name">Gryffindor</h3>
+                    <p class="house-card-motto">"Courage & Chivalry"</p>
+                    <p class="house-card-tagline">For the brave at heart</p>
+                    <div class="house-card-button">
+                        <span>Enter House</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+
+                <!-- Slytherin -->
+                <a href="houses/slytherin.html" class="house-card-modern" data-house="slytherin">
+                    <div class="house-card-glow"></div>
+                    <img src="assets/images/slytherin.png" alt="Slytherin Crest" class="house-crest">
+                    <h3 class="house-card-name">Slytherin</h3>
+                    <p class="house-card-motto">"Cunning & Ambition"</p>
+                    <p class="house-card-tagline">For the resourceful and determined</p>
+                    <div class="house-card-button">
+                        <span>Enter House</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+
+                <!-- Ravenclaw -->
+                <a href="houses/ravenclaw.html" class="house-card-modern" data-house="ravenclaw">
+                    <div class="house-card-glow"></div>
+                    <img src="assets/images/ravenclaw.png" alt="Ravenclaw Crest" class="house-crest">
+                    <h3 class="house-card-name">Ravenclaw</h3>
+                    <p class="house-card-motto">"Wit & Wisdom"</p>
+                    <p class="house-card-tagline">For the clever and curious</p>
+                    <div class="house-card-button">
+                        <span>Enter House</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+
+                <!-- Hufflepuff -->
+                <a href="houses/hufflepuff.html" class="house-card-modern" data-house="hufflepuff">
+                    <div class="house-card-glow"></div>
+                    <img src="assets/images/hufflepuff.png" alt="Hufflepuff Crest" class="house-crest">
+                    <h3 class="house-card-name">Hufflepuff</h3>
+                    <p class="house-card-motto">"Loyalty & Hard Work"</p>
+                    <p class="house-card-tagline">For the dedicated and fair</p>
+                    <div class="house-card-button">
+                        <span>Enter House</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+
+                <!-- Merlinthor -->
+                <a href="houses/openinnovation.html" class="house-card-modern" data-house="merlinthor">
+                    <div class="house-card-glow"></div>
+                    <img src="assets/images/merlinthor.png" alt="Merlinthor Crest" class="house-crest">
+                    <h3 class="house-card-name">Open Innovation House</h3>
+                    <p class="house-card-motto">"Wild Ideas & Open Innovation"</p>
+                    <p class="house-card-tagline">For visionaries who think beyond categories</p>
+                    <div class="house-card-button">
+                        <span>Enter House</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+            </div>
+        </div>>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="register-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Join the Magic</h2>
+            <p class="section-subtitle">Assemble your team of 1-4 wizards and register</p>
+
+            <div class="registration-form-container">
+                <form id="registrationForm" class="registration-form">
+                    <!-- Progress Indicator -->
+                    <div class="form-progress">
+                        <div class="progress-step active" data-step="1">Team</div>
+                        <div class="progress-step" data-step="2">Leader</div>
+                        <div class="progress-step" data-step="3">Members</div>
+                        <div class="progress-step" data-step="4">Review</div>
+                    </div>
+
+                    <!-- Step 1: Team Details -->
+                    <div class="form-step active" data-step="1">
+                        <h3 class="form-step-title">Team Details</h3>
+
+                        <div class="form-group">
+                            <label for="teamName">Team Name *</label>
+                            <input type="text" id="teamName" name="teamName" required
+                                placeholder="Enter your magical team name">
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="house">Choose Your House *</label>
+                            <select id="house" name="house" required>
+                                <option value="">Select a house...</option>
+                            </select>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectCode">Project Code *</label>
+                            <select id="projectCode" name="projectCode" required disabled>
+                                <option value="">First select a house...</option>
+                            </select>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectTitle">Project Title</label>
+                            <input type="text" id="projectTitle" name="projectTitle" readonly
+                                placeholder="Auto-filled based on project code">
+                        </div>
+
+                        <button type="button" class="btn btn-primary magical-ripple" onclick="nextFormStep()">
+                            Continue
+                        </button>
+                    </div>
+
+                    <!-- Step 2: Team Leader Details -->
+                    <div class="form-step" data-step="2">
+                        <h3 class="form-step-title">Team Leader Details</h3>
+
+                        <div class="form-group">
+                            <label for="leaderName">Full Name *</label>
+                            <input type="text" id="leaderName" name="leaderName" required
+                                placeholder="Enter leader's full name">
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="leaderCollege">College/Institution *</label>
+                            <input type="text" id="leaderCollege" name="leaderCollege" required
+                                placeholder="Enter college name">
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="leaderEmail">Email Address *</label>
+                            <input type="email" id="leaderEmail" name="leaderEmail" required
+                                placeholder="example@email.com">
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="leaderMobile">Mobile Number *</label>
+                            <input type="tel" id="leaderMobile" name="leaderMobile" required
+                                placeholder="+91 XXXXXXXXXX" pattern="[+]?[0-9]{10,15}">
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn-secondary magical-ripple" onclick="prevFormStep()">
+                                Back
+                            </button>
+                            <button type="button" class="btn btn-primary magical-ripple" onclick="nextFormStep()">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Team Members -->
+                    <div class="form-step" data-step="3">
+                        <h3 class="form-step-title">Team Members (Optional)</h3>
+                        <p class="form-helper">Add up to 3 additional team members</p>
+
+                        <div id="teamMembersContainer">
+                            <!-- Dynamic member fields will be added here -->
+                        </div>
+
+                        <button type="button" class="btn btn-outline magical-ripple" id="addMemberBtn"
+                            onclick="addTeamMember()">
+                            + Add Team Member
+                        </button>
+
+                        <!-- Merlinthor Extra Fields -->
+                        <div id="innovationFields" class="innovation-fields" style="display: none;">
+                            <h4 class="subsection-title">Open Innovation Details</h4>
+
+                            <div class="form-group">
+                                <label for="problemStatement">Problem Statement (150 words) *</label>
+                                <textarea id="problemStatement" name="problemStatement" rows="4" maxlength="1000"
+                                    placeholder="Describe the problem you're solving..."></textarea>
+                                <span class="char-count">0 / 150 words</span>
+                                <span class="form-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="proposedSolution">Proposed Solution (150 words) *</label>
+                                <textarea id="proposedSolution" name="proposedSolution" rows="4" maxlength="1000"
+                                    placeholder="Describe your innovative solution..."></textarea>
+                                <span class="char-count">0 / 150 words</span>
+                                <span class="form-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn-secondary magical-ripple" onclick="prevFormStep()">
+                                Back
+                            </button>
+                            <button type="button" class="btn btn-primary magical-ripple" onclick="nextFormStep()">
+                                Review
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Review & Submit -->
+                    <div class="form-step" data-step="4">
+                        <h3 class="form-step-title">Payment Details</h3>
+                        <p class="form-helper">Registration Fee: ₹600 per team</p>
+
+                        <div class="payment-container">
+                            <div class="payment-info">
+                                <h4>Pay via UPI</h4>
+                                <p><strong>UPI ID:</strong> satyasisir@axl</p>
+
+                                <div class="qr-code-display">
+                                    <img src="assets/images/payment-qr.png" alt="Payment QR Code"
+                                        class="payment-qr-code">
+                                </div>
+
+                                <p class="text-small">Scan the QR code or use the UPI ID above</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="transactionId">Transaction ID / UTR Number *</label>
+                                <input type="text" id="transactionId" name="transactionId" required
+                                    placeholder="Enter 12-digit transaction ID">
+                                <span class="form-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="paymentScreenshot">Payment Screenshot (Optional)</label>
+                                <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*">
+                                <span class="form-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn-secondary magical-ripple" onclick="prevFormStep()">
+                                Back
+                            </button>
+                            <button type="submit" class="btn btn-primary magical-ripple">
+                                Complete Registration
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <div class="success-icon">✨</div>
+                    <h3>Registration Successful!</h3>
+                    <p>Your team has been sorted into <span id="successHouse"></span>!</p>
+                    <p>Check your email for further instructions.</p>
+                    <button class="btn btn-primary magical-ripple" onclick="resetForm()">
+                        Register Another Team
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prizes Section -->
+    <section id="prizes" class="prizes-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Enchanted Rewards</h2>
+            <p class="section-subtitle">Claim your treasure for outstanding magical innovations</p>
+
+            <div class="prizes-scroll-container">
+                <div class="prize-card glow-border-gold">
+                    <div class="prize-rank">🥇</div>
+                    <h3>Grand Prize</h3>
+                    <div class="prize-amount">₹50,000</div>
+                    <p>Best Overall Project</p>
+                </div>
+                <div class="prize-card glow-border-silver">
+                    <div class="prize-rank">🥈</div>
+                    <h3>Runner Up</h3>
+                    <div class="prize-amount">₹30,000</div>
+                    <p>Second Best Project</p>
+                </div>
+                <div class="prize-card glow-border-bronze">
+                    <div class="prize-rank">🥉</div>
+                    <h3>Third Place</h3>
+                    <div class="prize-amount">₹20,000</div>
+                    <p>Third Best Project</p>
+                </div>
+                <div class="prize-card glow-border-special">
+                    <div class="prize-rank">✨</div>
+                    <h3>House Champions</h3>
+                    <div class="prize-amount">₹10,000</div>
+                    <p>Best in Each House</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hackwarts Academy</h3>
+                    <p>College of Innovation & Technology</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Event Coordinators</h4>
+                    <p>Prof. Albus Dumbledore</p>
+                    <p>Prof. Minerva McGonagall</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Email">✉</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-quote">
+                <p>"Help will always be given at Hogwarts to those who ask for it."</p>
+                <span>— Albus Dumbledore</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Chaitanya Engineering College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="#home" class="nav-item active" data-section="home">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="#houses" class="nav-item" data-section="houses">
+            <span class="nav-icon">🏰</span>
+            <span class="nav-label">Houses</span>
+        </a>
+        <a href="#register" class="nav-item" data-section="register">
+            <span class="nav-icon">📝</span>
+            <span class="nav-label">Register</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/form.js"></script>
+</body>
+
+</html>

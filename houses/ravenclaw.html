@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ravenclaw House - Advanced Level | Hackwarts Hackathon 2026">
+    <meta name="theme-color" content="#0E1A40">
+    <title>🦅 Ravenclaw House | Hackwarts Hackathon 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, rgba(14, 26, 64, 0.6) 0%, rgba(10, 10, 10, 0.9) 50%, rgba(14, 26, 64, 0.5) 100%), radial-gradient(circle at 20% 30%, rgba(14, 26, 64, 0.4), transparent 50%), radial-gradient(circle at 80% 70%, rgba(148, 107, 45, 0.25), transparent 50%), var(--color-bg-primary);
+            background-attachment: fixed;
+        }
+
+        .house-hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, rgba(14, 26, 64, 0.98) 0%, rgba(10, 10, 10, 0.8) 100%);
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-3xl) var(--spacing-md);
+            border-bottom: 3px solid #0E1A40;
+            box-shadow: 0 10px 50px rgba(14, 26, 64, 0.8), inset 0 0 100px rgba(14, 26, 64, 0.3);
+            position: relative;
+        }
+
+        .house-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../assets/images/ravenclaw.png') center/600px no-repeat;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .house-hero-crest {
+            width: 150px;
+            height: 150px;
+            margin-bottom: var(--spacing-lg);
+            filter: drop-shadow(0 0 30px rgba(148, 107, 45, 0.8));
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+            display: none;
+            /* Hidden to avoid duplicate with background */
+        }
+
+        .house-hero-name,
+        .house-hero-motto,
+        .house-hero-description,
+        .back-link {
+            position: relative;
+            z-index: 2;
+        }
+
+        .house-hero-name {
+            font-family: var(--font-heading);
+            font-size: clamp(32px, 10vw, 56px);
+            color: #946B2D;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 0 20px rgba(148, 107, 45, 0.6);
+        }
+
+        .house-hero-motto {
+            font-family: var(--font-heading);
+            font-size: var(--font-size-xl);
+            font-style: italic;
+            color: #946B2D;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .house-hero-description {
+            max-width: 700px;
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-lg);
+            line-height: 1.7;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: rgba(148, 107, 45, 0.1);
+            border: 1px solid #946B2D;
+            border-radius: var(--border-radius-lg);
+            color: #946B2D;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: var(--font-size-base);
+            transition: all 0.3s ease;
+            margin: var(--spacing-xl) 0;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, #946B2D, #B8853D);
+            color: var(--color-bg-primary);
+            transform: translateX(-4px);
+        }
+
+        .projects-section {
+            padding: var(--spacing-3xl) 0;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(14, 26, 64, 0.15) 50%, rgba(10, 10, 10, 0.95) 100%);
+            position: relative;
+        }
+
+        .projects-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 800px;
+            height: 100%;
+            background: url('../assets/images/ravenclaw.png') center/contain no-repeat;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .projects-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-card-house {
+            background: linear-gradient(135deg, rgba(14, 26, 64, 0.2), rgba(20, 20, 20, 0.9));
+            border: 1px solid rgba(14, 26, 64, 0.4);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card-house:hover {
+            border-color: #0E1A40;
+            box-shadow: 0 8px 32px rgba(14, 26, 64, 0.4);
+            transform: translateY(-4px);
+            background: linear-gradient(135deg, rgba(14, 26, 64, 0.3), rgba(20, 20, 20, 0.95));
+        }
+
+        .project-code-tag {
+            display: inline-block;
+            background: #0E1A40;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .project-name {
+            font-family: var(--font-heading);
+            font-size: var(--font-size-xl);
+            color: #946B2D;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .project-summary {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .key-points {
+            list-style: none;
+            padding: 0;
+        }
+
+        .key-points li {
+            padding: var(--spacing-xs) 0;
+            padding-left: var(--spacing-md);
+            position: relative;
+            color: var(--color-text-secondary);
+            font-size: 14px;
+        }
+
+        .key-points li:before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="house-hero">
+        <a href="../index.html#houses" class="back-link"><span>←</span><span>Back to Houses</span></a>
+        <img src="../assets/images/ravenclaw.png" alt="Ravenclaw Crest" class="house-hero-crest">
+        <h1 class="house-hero-name">Ravenclaw</h1>
+        <p class="house-hero-motto">"Advanced Level"</p>
+        <p class="house-hero-description">Where wit and wisdom unite. Ravenclaw focuses on intelligence, AI, and
+            advanced analytics. Perfect for those ready to push technological boundaries!</p>
+    </section>
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Ravenclaw Projects</h2>
+            <p class="section-subtitle">Choose your intelligent challenge</p>
+            <div class="project-card-house"><span class="project-code-tag">PR-RAV-01</span>
+                <h3 class="project-name">AI Study Assistant</h3>
+                <p class="project-summary">AI-powered doubt-solving assistant.</p>
+                <ul class="key-points">
+                    <li>NLP-based answers</li>
+                    <li>Topic suggestions</li>
+                    <li>Chat interface</li>
+                    <li>Learning history</li>
+                </ul>
+            </div>
+            <div class="project-card-house"><span class="project-code-tag">PR-RAV-02</span>
+                <h3 class="project-name">Predictive Attendance Analyzer</h3>
+                <p class="project-summary">Predict attendance trends using past data.</p>
+                <ul class="key-points">
+                    <li>Data preprocessing</li>
+                    <li>Graphs & insights</li>
+                    <li>ML model</li>
+                    <li>Exportable reports</li>
+                </ul>
+            </div>
+            <div class="project-card-house"><span class="project-code-tag">PR-RAV-03</span>
+                <h3 class="project-name">Smart Recommendation System</h3>
+                <p class="project-summary">Recommends courses/resources based on interests.</p>
+                <ul class="key-points">
+                    <li>User profiling</li>
+                    <li>Recommendation logic</li>
+                    <li>Feedback loop</li>
+                    <li>Scalable design</li>
+                </ul>
+            </div>
+            <div class="project-card-house"><span class="project-code-tag">PR-RAV-04</span>
+                <h3 class="project-name">Fake News Detector</h3>
+                <p class="project-summary">Detect misleading news articles.</p>
+                <ul class="key-points">
+                    <li>Text classification</li>
+                    <li>Confidence score</li>
+                    <li>URL analysis</li>
+                    <li>Clean UI</li>
+                </ul>
+            </div>
+            <div class="project-card-house"><span class="project-code-tag">PR-RAV-05</span>
+                <h3 class="project-name">Voice-Controlled App</h3>
+                <p class="project-summary">App controlled using voice commands.</p>
+                <ul class="key-points">
+                    <li>Speech recognition</li>
+                    <li>Command mapping</li>
+                    <li>Accessibility focus</li>
+                    <li>Error handling</li>
+                </ul>
+            </div>
+            <div class="project-card-house"><span class="project-code-tag">PR-RAV-06</span>
+                <h3 class="project-name">Smart Exam Proctoring</h3>
+                <p class="project-summary">Online exam monitoring system.</p>
+                <ul class="key-points">
+                    <li>Face detection</li>
+                    <li>Tab-switch detection</li>
+                    <li>Report generation</li>
+                    <li>Privacy safeguards</li>
+                </ul>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-3xl);"><a href="../index.html#register"
+                    class="btn btn-primary magical-ripple">Join Ravenclaw</a></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div style="text-align: center;">
+                <p style="color: var(--color-text-secondary);"><a href="../index.html" style="color: #946B2D;">← Return
+                        to Main Page</a></p>
+                <p style="color: var(--color-text-secondary); margin-top: var(--spacing-md);">© 2026 Hackwarts
+                    Hackathon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

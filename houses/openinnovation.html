@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Open Innovation House - Wild Ideas | Hackwarts Hackathon 2026">
+    <meta name="theme-color" content="#4B0082">
+    <title>🔮 Open Innovation House | Hackwarts Hackathon 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.6) 0%, rgba(10, 10, 10, 0.9) 50%, rgba(75, 0, 130, 0.5) 100%), radial-gradient(circle at 20% 30%, rgba(75, 0, 130, 0.4), transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.2), transparent 50%), var(--color-bg-primary);
+            background-attachment: fixed;
+        }
+
+        .house-hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.98) 0%, rgba(10, 10, 10, 0.8) 100%);
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-3xl) var(--spacing-md);
+            border-bottom: 3px solid #4B0082;
+            box-shadow: 0 10px 50px rgba(75, 0, 130, 0.8), inset 0 0 100px rgba(75, 0, 130, 0.3);
+            position: relative;
+        }
+
+        .house-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../assets/images/merlinthor.png') center/600px no-repeat;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .house-hero-crest {
+            width: 150px;
+            height: 150px;
+            margin-bottom: var(--spacing-lg);
+            filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+            display: none;
+            /* Hidden to avoid duplicate with background */
+        }
+
+        .house-hero-name,
+        .house-hero-motto,
+        .house-hero-description,
+        .back-link {
+            position: relative;
+            z-index: 2;
+        }
+
+        .house-hero-name {
+            font-family: var(--font-heading);
+            font-size: clamp(32px, 10vw, 56px);
+            color: #FFD700;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .house-hero-motto {
+            font-family: var(--font-heading);
+            font-size: var(--font-size-xl);
+            font-style: italic;
+            color: #FFD700;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .house-hero-description {
+            max-width: 700px;
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-lg);
+            line-height: 1.7;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid #FFD700;
+            border-radius: var(--border-radius-lg);
+            color: #FFD700;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: var(--font-size-base);
+            transition: all 0.3s ease;
+            margin: var(--spacing-xl) 0;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: var(--color-bg-primary);
+            transform: translateX(-4px);
+        }
+
+        .projects-section {
+            padding: var(--spacing-3xl) 0;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(75, 0, 130, 0.15) 50%, rgba(10, 10, 10, 0.95) 100%);
+            position: relative;
+        }
+
+        .projects-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 800px;
+            height: 100%;
+            background: url('../assets/images/merlinthor.png') center/contain no-repeat;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .projects-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-card-house {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.2), rgba(20, 20, 20, 0.9));
+            border: 1px solid rgba(75, 0, 130, 0.4);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card-house:hover {
+            border-color: #4B0082;
+            box-shadow: 0 8px 32px rgba(75, 0, 130, 0.4);
+            transform: translateY(-4px);
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.3), rgba(20, 20, 20, 0.95));
+        }
+
+        .project-code-tag {
+            display: inline-block;
+            background: #4B0082;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .project-name {
+            font-family: var(--font-heading);
+            font-size: var(--font-size-xl);
+            color: #FFD700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .project-summary {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .key-points {
+            list-style: none;
+            padding: 0;
+        }
+
+        .key-points li {
+            padding: var(--spacing-xs) 0;
+            padding-left: var(--spacing-md);
+            position: relative;
+            color: var(--color-text-secondary);
+            font-size: 14px;
+        }
+
+        .key-points li:before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="house-hero">
+        <a href="../index.html#houses" class="back-link"><span>←</span><span>Back to Houses</span></a>
+        <img src="../assets/images/merlinthor.png" alt="Open Innovation House Crest" class="house-hero-crest">
+        <h1 class="house-hero-name">Open Innovation House</h1>
+        <p class="house-hero-motto">"Wild Ideas & Open Innovation"</p>
+        <p class="house-hero-description">For visionaries and pioneers. Bring any domain - research, startups, wild
+            ideas - and create magic beyond boundaries. Innovation knows no limits!</p>
+    </section>
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Open Innovation Projects</h2>
+            <p class="section-subtitle">Choose your visionary challenge</p>
+            <div class="project-card-house"><span class="project-code-tag">PR-OPEN-01</span>
+                <h3 class="project-name">Smart City Mini Solution</h3>
+                <p class="project-summary">Any tech improving city life.</p>
+                <ul class="key-points">
+                    <li>Real-world problem</li>
+                    <li>Scalable idea</li>
+                    <li>Tech justification</li>
+                    <li>Demo prototype</li>
+                </ul>
+            </div>
+            <div class="project-card-house"><span class="project-code-tag">PR-OPEN-02</span>
+                <h3 class="project-name">Green Tech Innovation</h3>
+                <p class="project-summary">Technology for sustainability.</p>
+                <ul class="key-points">
+                    <li>Environmental impact</li>
+                    <li>Cost efficiency</li>
+                    <li>Innovation factor</li>
+                    <li>Measurable outcomes</li>
+                </ul>
+            </div>
+            <div class="project-card-house"><span class="project-code-tag">PR-OPEN-03</span>
+                <h3 class="project-name">EdTech Innovation</h3>
+                <p class="project-summary">New way to improve learning.</p>
+                <ul class="key-points">
+                    <li>Learning gap identified</li>
+                    <li>Interactive design</li>
+                    <li>Accessibility</li>
+                    <li>Assessment metrics</li>
+                </ul>
+            </div>
+            <div class="project-card-house"><span class="project-code-tag">PR-OPEN-04</span>
+                <h3 class="project-name">FinTech Idea</h3>
+                <p class="project-summary">Digital finance or security solution.</p>
+                <ul class="key-points">
+                    <li>Security focus</li>
+                    <li>User trust</li>
+                    <li>Compliance-ready</li>
+                    <li>Clear use case</li>
+                </ul>
+            </div>
+            <div class="project-card-house"><span class="project-code-tag">PR-OPEN-05</span>
+                <h3 class="project-name">HealthTech Concept</h3>
+                <p class="project-summary">Tech for healthcare improvement.</p>
+                <ul class="key-points">
+                    <li>Problem relevance</li>
+                    <li>Data privacy</li>
+                    <li>User safety</li>
+                    <li>Prototype/demo</li>
+                </ul>
+            </div>
+            <div class="project-card-house"><span class="project-code-tag">PR-OPEN-06</span>
+                <h3 class="project-name">Student Startup Idea</h3>
+                <p class="project-summary">Any startup-ready idea.</p>
+                <ul class="key-points">
+                    <li>Market need</li>
+                    <li>Revenue model</li>
+                    <li>Innovation</li>
+                    <li>Pitch readiness</li>
+                </ul>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-3xl);"><a href="../index.html#register"
+                    class="btn btn-primary magical-ripple">Join Open Innovation</a></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div style="text-align: center;">
+                <p style="color: var(--color-text-secondary);"><a href="../index.html" style="color: #FFD700;">← Return
+                        to Main Page</a></p>
+                <p style="color: var(--color-text-secondary); margin-top: var(--spacing-md);">© 2026 Hackwarts
+                    Hackathon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

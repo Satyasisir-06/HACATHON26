@@ -1,0 +1,48 @@
+/* Payment Section Styles */
+.payment-container {
+    margin: var(--spacing-xl) 0;
+}
+
+.payment-info {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.payment-info h4 {
+    color: var(--color-accent-gold);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-xl);
+}
+
+.payment-info p {
+    margin: var(--spacing-sm) 0;
+}
+
+.payment-info strong {
+    color: var(--color-accent-gold);
+}
+
+.payment-info .text-small {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    margin-top: var(--spacing-md);
+}
+
+.qr-code-display {
+    margin: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.payment-qr-code {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    background: white;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
